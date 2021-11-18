@@ -20,3 +20,7 @@ img is defined at bottom of file with HSV weights.
 
 there is an option to make the num of skittles unlimited (useful to help you determine the weights you want for an image).
 and an option to go in random order, so each pixel gets a more fair chance of getting its desired color.
+
+# example
+![Alt text](example/1.jpg?raw=true "with ~100 bags of skittles (not random order)")
+![Alt text](example/2.jpg?raw=true "with ~100 bags of skittles (random order)")
