@@ -22,5 +22,13 @@ there is an option to make the num of skittles unlimited (useful to help you det
 and an option to go in random order, so each pixel gets a more fair chance of getting its desired color.
 
 # example
-![Alt text](Examples/1.jpg?raw=true "with ~100 bags of skittles (not random order)")
-![Alt text](Examples/2.jpg?raw=true "with ~100 bags of skittles (random order)")
+with ~100 bags of skittles (not random order)
+
+![Alt text](Examples/1.jpg?raw=true "Title")
+
+<br />
+<br />
+
+with ~100 bags of skittles (random order)
+
+![Alt text](Examples/2.jpg?raw=true "Title")
