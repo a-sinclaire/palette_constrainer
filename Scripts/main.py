@@ -26,15 +26,6 @@ for q in range(len(skittle_counts)):
 # it also ha a priority option with three choices: none, random, and confidence.
 # none assigns skittles in pixel order, random in random order, confidence assigns the most confident skittles first
 out_img, out_arr, out_count = skittlefy(img, skittle_palette, skittle_counts, Hue_Weight=H, Sat_Weight=S, Val_Weight=V, unlimited=False, use_all=True, priority='confidence')
-
-# Take the returned array and the palette to create an image where the pixels
-# represent a skittle and draw a circle instead of the pixel. Each circle
-# would be colored using the palette.
-circDiam = 4
-rimage = cv2.imread(img)
-rows, cols, colors = rimage.shape
-renderSkittles(circDiam, cols, rows, out_arr, skittle_palette)
-
 # it returns three values: out_img, out_arr, and out_count
 # out_img is a cv2 img with the skittle colors in it
 # out_arr is a 2d array where each element has an int value corresponding to the color that pixel has been assigned
@@ -46,6 +37,14 @@ renderSkittles(circDiam, cols, rows, out_arr, skittle_palette)
 # prints skittle counts before and after
 print(skittle_counts)
 print(out_count)
+
+# Take the returned array and the palette to create an image where the pixels
+# represent a skittle and draw a circle instead of the pixel. Each circle
+# will be colored using the palette.
+circDiam = 4
+rimage = cv2.imread(img)
+rows, cols, colors = rimage.shape
+renderSkittles(circDiam, cols, rows, out_arr, skittle_palette)
 
 # displays before and after images
 img = cv2.imread(img)

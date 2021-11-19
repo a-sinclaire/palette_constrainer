@@ -3,7 +3,6 @@
 #
 import pygame,sys
 from pygame.locals import *  # pygame.locals.QUIT --> QUIT
-BACKGROUND = (217,217,217)
 
 def main():
     # test
@@ -46,7 +45,7 @@ def renderSkittles(diameter, w, h, poxels, palette):
                 showingWindow=False
 
         if showingWindow:
-            screen.fill(BACKGROUND)
+            screen.fill(hex_to_rgb(palette[-1]))
             for r in range(h):
                 for c in range(w):
                     color_index = poxels[r][c]
