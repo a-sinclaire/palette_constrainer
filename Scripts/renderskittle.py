@@ -33,7 +33,7 @@ def hex_to_rgb(value):
 
 def renderSkittles(diameter, w, h, poxels, palette):
     pygame.init()
-    screen = pygame.display.set_mode((400,400))
+    screen = pygame.display.set_mode((w*diameter*2,h*diameter*2))
     pygame.display.set_caption("Skittles")
     clock = pygame.time.Clock() # creating the game clock 
     showingWindow = True
