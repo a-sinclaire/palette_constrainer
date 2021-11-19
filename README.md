@@ -22,13 +22,38 @@ there is an option to make the num of skittles unlimited (useful to help you det
 and an option to go in random order, so each pixel gets a more fair chance of getting its desired color.
 
 # example
-with ~100 bags of skittles (not random order)
+with ~100 bags of skittles (not random order) on 128x128 canvas
 
 ![Alt text](Examples/1.jpg?raw=true "Title")
 
 <br />
 <br />
 
-with ~100 bags of skittles (random order)
+with ~100 bags of skittles (random order) on 128x128 canvas
 
 ![Alt text](Examples/2.jpg?raw=true "Title")
+
+# skittle3.py
+this is skittle2.py BUT it MUST use all the skittles it is given. (skittle2.py could "throw out" unneeded skittles)
+it now also fills in not based on a random order, but rather based on the order where what pixels think they are most confident in their color.
+you can see now that it MUST use all of them, it can have some quite ugly results. and now the number of bags of skittles we use is penalized for being too high.
+if you will allow skittles to be "thrown out" i think skittle2.py will give nicer results
+
+with ~65 bags of skittles on 128x128 canvas
+
+![Alt text](Examples/3.jpg?raw=true "Title")
+
+<br />
+<br />
+
+with ~100 bags of skittles on 128x128 canvas
+
+![Alt text](Examples/4.jpg?raw=true "Title")
+
+<br />
+<br />
+
+with ~50 bags of skittles on 128x128 canvas
+
+![Alt text](Examples/5.jpg?raw=true "Title")
+
