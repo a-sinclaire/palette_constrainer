@@ -7,7 +7,10 @@ import random
 
 # green, red, orange, yellow, purple, white
 skittles = ["#378e30", "#912439", "#dc5343", "#c5ba5e", "#1d1b20", "#ffffff"]
-counts = [1700, 1800, 2100, 2100, 2200, 99999999]  # ~100 bags
+counts = [17, 18, 21, 21, 22, 9999]  # ~100 bags
+n_bags = 100
+for i in range(len(counts)):
+    counts[i] *= n_bags
 
 
 def hex_to_rgb(value):
@@ -97,7 +100,16 @@ def lowest_index(arr):
     return index
 
 
-def run(image, palette, Hue_Weight=1, Sat_Weight=1, Val_Weight=10, unlimited=False, random_order=True):
+# returns lowest value in array
+def lowest_value(arr):
+    lowest = arr[0]
+    for i in range(len(arr)):
+        if arr[i] < lowest:
+            lowest = arr[i]
+    return lowest
+
+
+def run(image, palette, Hue_Weight=1, Sat_Weight=1, Val_Weight=10, unlimited=False, random_order=True, priority_order=True):
     # convert palette to HSV (palette contains hex equivalent of skittles colors) (but any colors could be used)
     hsv_palette = []
     for p in palette:
@@ -129,6 +141,20 @@ def run(image, palette, Hue_Weight=1, Sat_Weight=1, Val_Weight=10, unlimited=Fal
 
     # the order we will loop through the array to assign colors
     pix_index = list(range(rows*cols))
+    if priority_order:
+        random_order = False
+        # instead of random we want it to be in order of pixels that are closet to values
+        # sort this list based on lowest_value(img_data[i][j])
+        expanded_img_data = [[None] for y in range(rows * cols)]
+        for i in range(len(expanded_img_data)):
+            expanded_img_data[i] = img_data[int(i / cols)][i % cols]
+        sort_control = [[None] for y in range(rows * cols)]
+        for i in range(len(sort_control)):
+            sort_control[i] = lowest_value(expanded_img_data[i])
+
+        # control the order in which we assign skittles based on how close they are to their preferred color
+        pix_index = [x for _, x in sorted(zip(sort_control, pix_index))]
+
     if random_order:  # if random we shuffle
         random.shuffle(pix_index)
 
@@ -168,14 +194,15 @@ def run(image, palette, Hue_Weight=1, Sat_Weight=1, Val_Weight=10, unlimited=Fal
 
 image = cv2.imread("../Lenna128.png")
 image = cv2.imread("../Lenna128_2.png")
-image = cv2.imread("../rainbow128.jpg")
+#image = cv2.imread("../rainbow128.jpg")
 # image = cv2.imread("../the_drill.png")
 # image = cv2.imread("../brown.png")
-image = cv2.imread("../me128.jpg")
+#image = cv2.imread("../me128.jpg")
 
 # how we weight the hue, saturation, and value
 H = 2
 S = 1
 V = 5
 
-run(image, skittles, Hue_Weight=H, Sat_Weight=S, Val_Weight=V, unlimited=False, random_order=False)
+# priority order overides random order
+run(image, skittles, Hue_Weight=H, Sat_Weight=S, Val_Weight=V, unlimited=False, random_order=True, priority_order=True)
