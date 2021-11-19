@@ -26,13 +26,13 @@ Takes an input image and "skittlefies" it.
                      priority none: assigns skittles in order of the pixels
                      priority random: assigns skittles in random order
                      priority confidence: assigns the most confident skittles first
-    :return: skittlefied_img, skittlefied_array, remaining_count
-             skittlefied_img: cv2 img where the colors are replaced with the palette colors
+    :return: skittlefied_img: cv2 img where the colors are replaced with the palette colors
              skittlefied_array: 2d array filled with the skittle colors represented by the index from palette
              remaining_count: how many of each color are remaining after skittlefying (relevant if use_all=False)
 
 Imagine you wanted to convert an img into skittles. just input the num of skittles you have, and make sure your img is at the resolution so 1px=1skittle.<br />
-It will try to make the best image given the skittles it has.<br />
+It will try to make the best image given the skittles it has.<br /><br />
+renderskittle.py can take the 2d skittlefied array output from skittlefy and show a representation of what it would look like irl using pygame. (Thanks to Jim Laderoute for making renderskittle.py!)<br />
 
 # How to use
 See the file main.py for an example of using this tool. The important line is where you call skittlefy. Try playing around with the settings to see the results you get. (All code below this line is for displaying the output to the user, it is not required for the function or operate correctly)<br />
