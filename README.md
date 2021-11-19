@@ -11,7 +11,8 @@ also at the bottom is where the palette is defined and the image you're operatin
 nothing is passed in from the cmd line b/c i cant be bothered. just edit the file.<br />
 
 # skittle4.py
-Takes an input image and "skittlefies" it.
+Takes an input image and "skittlefies" it.<br />
+Just use the skittlefy() function in skittle4.py. Here are the parameters:<br />
 
     :param image_path: path to img to skittlefy
     :param palette: array of hex strings (available skittle colors) -- last is bg color of your canvas
