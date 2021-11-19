@@ -16,10 +16,12 @@ additionally there is a var called counts that determines how many of each color
 takes an image, and given some number of each color, recolors the image.
 
 imagine you wanted to convert an img into skittles. just input the num of skittles you have, and make sure you img is at the resolution so 1px=1skittle.
+it will try to make the best image given the skittles it has, but it will not necessarily use all the skittles (it will throw some out). if you wish to use ALL the skittles see skittle3.py
 img is defined at bottom of file with HSV weights.
 
 there is an option to make the num of skittles unlimited (useful to help you determine the weights you want for an image).
 and an option to go in random order, so each pixel gets a more fair chance of getting its desired color.
+there is also priority order (which overrides random order) that prioritzes pixels who are confident about their color.
 
 # example
 with ~100 bags of skittles (not random order) on 128x128 canvas
@@ -32,6 +34,13 @@ with ~100 bags of skittles (not random order) on 128x128 canvas
 with ~100 bags of skittles (random order) on 128x128 canvas
 
 ![Alt text](Examples/2.jpg?raw=true "Title")
+
+<br />
+<br />
+
+with ~100 bags of skittles (priority order) on 128x128 canvas
+
+![Alt text](Examples/6.jpg?raw=true "Title")
 
 # skittle3.py
 this is skittle2.py BUT it MUST use all the skittles it is given. (skittle2.py could "throw out" unneeded skittles)
