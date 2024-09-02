@@ -5,13 +5,13 @@
 #       Can take an image, a palette of colors, a count of how many of each color exists and
 #       generate an output image using only those available colors and their counts
 #
-# Author: Sam Laderoute
+# Author: Amelia Sinclaire
 #
 # History:
-#   19Nov2021   Sam Laderoute   Created file from skittle3.py
-#                               Removed elements that made it a script
-#                               Added more accessible options for skittlefication
-#                               Comment and Clean
+#   19Nov2021   Amelia Sinclaire Created file from skittle3.py
+#                                Removed elements that made it a script
+#                                Added more accessible options for skittlefication
+#                                Comment and Clean
 #
 # Example of how to use:
 #
