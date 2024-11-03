@@ -1,6 +1,7 @@
 # Amelia Sinclaire 2024
 
 import random
+from copy import deepcopy
 
 import cv2
 from numpy.typing import NDArray
@@ -102,6 +103,7 @@ def skittlize(image_path: str, palette: list[str], palette_count: list[int],
     if priority not in priority_types:
         raise ValueError(f'Invalid priority type.'
                          f'Expected one of: {priority_types}')
+    palette_count = deepcopy(palette_count)
 
     # SETTING THE NUMBER OF "BG color" SKITTLES TO EXACTLY (last index)
     # THE NUMBER OF EMPTY SPACES WE HAVE

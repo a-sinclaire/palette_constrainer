@@ -4,7 +4,7 @@ from renderskittle import renderSkittles
 
 def main():
     # the path of the image to convert (try to pick something small, like 128x128 or less, larger will take time)
-    img = "../Examples/Lenna128_2.png"
+    img = "Examples/meeley3_128.png"
     # green, red, orange, yellow, purple, white (skittle colors - last element is always the "bg" color)
     skittle_palette = ["#378e30", "#912439", "#dc5343", "#c5ba5e", "#1d1b20", "#ffffff"]
     # counts of each color in array above. - last element value doesn't matter
