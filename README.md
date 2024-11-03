@@ -45,18 +45,18 @@ With ~65 bags of skittles, H_weight=1, S_weight=1, V_weight=3, canvas size=128x1
 UNLIMITED SKITTLES<br />
 Here you can see the output skittlefy gives when given unlimmited skittles to work with, and it is allowed to throw away unwanted skittles.<br />
 This is the ideal image it wants to produce. On the left we see the original, the middle is the output image, and the right is a rendering showing if each pixel were a skittle.<br />
-<img src="./Examples/Lenna128_2.png" alt="alt text" width="256" height="256"> <img src="./Examples/unlimited.png" alt="alt text" width="256" height="256"> <img src="./Examples/unlimited_s.png" alt="alt text" width="256" height="256"><br /><br /><br />
+<img src="./Examples/example_img.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/unlimited.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/unlimited_s.png" alt="alt text" width="256" height="256"><br /><br /><br />
 
 USE ALL SKITTLES<br />
 In these examples use_all is true, meaning the program MUST use ALL the skittles it is given.<br />
 The left shows the skittles being assigned with no order (pixel order), the middle random order, and the right uses confidence order (skittles most confident in their color get placed first) (below shows the rendering as if each pixel were a skittle)<br />
-<img src="./Examples/all_none.png" alt="alt text" width="256" height="256"> <img src="./Examples/all_random.png" alt="alt text" width="256" height="256"> <img src="./Examples/all_conf.png" alt="alt text" width="256" height="256"><br />
+<img src="./Examples/pixel_order_all.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/random_order_all.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/confidence_order_all.jpg" alt="alt text" width="256" height="256"><br />
 <img src="./Examples/all_none_s.png" alt="alt text" width="256" height="256"> <img src="./Examples/all_random_s.png" alt="alt text" width="256" height="256"> <img src="./Examples/all_conf_s.png" alt="alt text" width="256" height="256"><br /><br /><br />
 
 USE SOME SKITTLES<br />
 In these examples use_all is false, meaning the program doesn't have to use skittles if they dont fit, it can leave the space blank.<br />
 The left shows the skittles being assigned with no order (pixel order), the middle random order, and the right uses confidence order (skittles most confident in their color get placed first) (below shows the rendering as if each pixel were a skittle)<br />
-<img src="./Examples/some_none.png" alt="alt text" width="256" height="256"> <img src="./Examples/some_random.png" alt="alt text" width="256" height="256"> <img src="./Examples/some_conf.png" alt="alt text" width="256" height="256"><br />
+<img src="./Examples/pixel_order_some.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/random_order_some.jpg" alt="alt text" width="256" height="256"> <img src="./Examples/confidence_order_some.jpg" alt="alt text" width="256" height="256"><br />
 <img src="./Examples/some_none_s.png" alt="alt text" width="256" height="256"> <img src="./Examples/some_random_s.png" alt="alt text" width="256" height="256"> <img src="./Examples/some_conf_s.png" alt="alt text" width="256" height="256"><br /><br /><br />
 
 
