@@ -55,7 +55,7 @@ def lowest_value(arr: list[float]) -> float:
     return min(arr)
 
 
-def skittlefy(image_path: str, palette: list[str], palette_count: list[int],
+def skittlize(image_path: str, palette: list[str], palette_count: list[int],
               hue_weight: int = 1, sat_weight: int = 1, val_weight: int = 3,
               unlimited: bool = False, use_all: bool = False,
               priority: str = 'none'

@@ -1,5 +1,5 @@
 import cv2
-from skittle4 import skittlefy
+from skittle4 import skittlize
 from renderskittle import renderSkittles
 
 def main():
@@ -26,7 +26,7 @@ def main():
     #   (provided the number of skittles is smaller than the canvas size)
     # it also ha a priority option with three choices: none, random, and confidence.
     # none assigns skittles in pixel order, random in random order, confidence assigns the most confident skittles first
-    out_img, out_arr, out_count = skittlefy(img, skittle_palette, skittle_counts, hue_weight=H, sat_weight=S, val_weight=V, unlimited=False, use_all=True, priority='confidence')
+    out_img, out_arr, out_count = skittlize(img, skittle_palette, skittle_counts, hue_weight=H, sat_weight=S, val_weight=V, unlimited=False, use_all=True, priority='confidence')
     # it returns three values: out_img, out_arr, and out_count
     # out_img is a cv2 img with the skittle colors in it
     # out_arr is a 2d array where each element has an int value corresponding to the color that pixel has been assigned
