@@ -43,12 +43,10 @@ def main(args):
 
 
 if __name__=='__main__':
-    # TODO: change the default palette and counts to skittle versions?
-    rainbow_palette = ['#ff595e', '#ff924c', '#ffca3a', '#c5ca30', '#8ac926',
-                       '#52a675', '#1982c4', '#4267ac', '#6a4c93', '#ff0000',
-                       '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff',
-                       '#ffffff', '#000000']
-    rainbow_counts = [500] * len(rainbow_palette)
+    skittle_palette = ["#378e30", "#912439", "#dc5343", "#c5ba5e", "#1d1b20", "#ffffff"]
+    skittle_counts = [17, 18, 21, 21, 22, 999]
+    n_bags = 65
+    skittle_counts = [x * n_bags for x in skittle_counts]
 
     parser = argparse.ArgumentParser()
     parser.add_argument('image_path',
@@ -57,12 +55,12 @@ if __name__=='__main__':
     parser.add_argument('-p', '--palette',
                         nargs='+',
                         type=str,
-                        default=rainbow_palette,
+                        default=skittle_palette,
                         help='List of hex codes to use. The last color is the background color.')
     parser.add_argument('-c', '--counts',
                         nargs='+',
                         type=int,
-                        default=rainbow_counts,
+                        default=skittle_counts,
                         help='List of counts for each color. If left untouched it will default to 500 per color. The last color is the background color, as the count is infinite no matter what you put.')
     parser.add_argument('-x', '--hue_weight',
                         type=float,
@@ -91,7 +89,7 @@ if __name__=='__main__':
     args = parser.parse_args()
     if not os.path.exists(args.image_path):
         raise ValueError(f'{args.image_path} does not exist.')
-    if args.counts == rainbow_counts and args.palette != rainbow_palette:
+    if args.counts == skittle_counts and args.palette != skittle_palette:
         args.counts = [500] * len(args.palette)
 
     main(args)
