@@ -4,16 +4,18 @@ from renderskittle import renderSkittles
 
 def main():
     # the path of the image to convert (try to pick something small, like 128x128 or less, larger will take time)
-    img = "Examples/meeley3_128.png"
+    img = "Examples/color_test.jpg"
     # green, red, orange, yellow, purple, white (skittle colors - last element is always the "bg" color)
     skittle_palette = ["#378e30", "#912439", "#dc5343", "#c5ba5e", "#1d1b20", "#ffffff"]
+    rainbow_palette = ['#ff595e', '#ff924c', '#ffca3a', '#c5ca30', '#8ac926', '#52a675', '#1982c4', '#4267ac', '#6a4c93', '#ffffff', '#000000']
+    rainbow_counts  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     # counts of each color in array above. - last element value doesn't matter
     skittle_counts = [17, 18, 21, 21, 22, 999]
     # how we weight the hue, saturation, and value when comparing img col to palette col
     # the higher it's weighted the more important it is to preserve
     H = 1
     S = 1
-    V = 3
+    V = 1
     # this loop just increases the number of each skittle for testing purposes
     # in a real implementation your counts array should have the real num of skittles available to begin with
     n_bags = 65
@@ -26,7 +28,7 @@ def main():
     #   (provided the number of skittles is smaller than the canvas size)
     # it also ha a priority option with three choices: none, random, and confidence.
     # none assigns skittles in pixel order, random in random order, confidence assigns the most confident skittles first
-    out_img, out_arr, out_count = skittlize(img, skittle_palette, skittle_counts, hue_weight=H, sat_weight=S, val_weight=V, unlimited=False, use_all=True, priority='confidence')
+    out_img, out_arr, out_count = skittlize(img, rainbow_palette, rainbow_counts, hue_weight=H, sat_weight=S, val_weight=V, unlimited=True, use_all=True, priority='confidence')
     # it returns three values: out_img, out_arr, and out_count
     # out_img is a cv2 img with the skittle colors in it
     # out_arr is a 2d array where each element has an int value corresponding to the color that pixel has been assigned
@@ -42,10 +44,10 @@ def main():
     # Take the returned array and the palette to create an image where the pixels
     # represent a skittle and draw a circle instead of the pixel. Each circle
     # will be colored using the palette.
-    circDiam = 4
-    rimage = cv2.imread(img)
-    rows, cols, colors = rimage.shape
-    renderSkittles(circDiam, cols, rows, out_arr, skittle_palette)
+    # circDiam = 4
+    # rimage = cv2.imread(img)
+    # rows, cols, colors = rimage.shape
+    # renderSkittles(circDiam, cols, rows, out_arr, skittle_palette)
 
     # displays before and after images
     img = cv2.imread(img)
