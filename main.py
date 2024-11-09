@@ -1,5 +1,5 @@
 import cv2
-from skittle4 import skittlize
+from skittlize import skittlize
 from renderskittle import renderSkittles
 
 def main():

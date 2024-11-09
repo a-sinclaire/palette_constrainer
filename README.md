@@ -10,11 +10,11 @@ modify they values H, S, and V at the bottom to weight hue, sat, and val differe
 also at the bottom is where the palette is defined and the image you're operating on is defined.<br />
 nothing is passed in from the cmd line b/c i cant be bothered. just edit the file.<br />
 
-# skittle4.py
-Takes an input image and "skittlefies" it.<br />
-Just use the skittlefy() function in skittle4.py. Here are the parameters:<br />
+# skittlize.py
+Takes an input image and "skittlizes" it.<br />
+Just use the skittlize() function in skittlize.py. Here are the parameters:<br />
 
-    :param image_path: path to img to skittlefy
+    :param image_path: path to img to skittlize
     :param palette: array of hex strings (available skittle colors) -- last is bg color of your canvas
     :param palette_count: count of how many of each color skittle you have. (count for last index doesnt matter)
     :param Hue_Weight: how important is preserving the hue? (hint: negative values work as a deterrent)
@@ -36,7 +36,7 @@ It will try to make the best image given the skittles it has.<br /><br />
 renderskittle.py can take the 2d skittlefied array output from skittlefy and show a representation of what it would look like irl using pygame. (Thanks to Jim Laderoute for making renderskittle.py!)<br />
 
 # How to use
-See the file main.py for an example of using this tool. The important line is where you call skittlefy. Try playing around with the settings to see the results you get. (All code below this line is for displaying the output to the user, it is not required for the function or operate correctly)<br />
+See the file main.py for an example of using this tool. The important line is where you call skittlize. Try playing around with the settings to see the results you get. (All code below this line is for displaying the output to the user, it is not required for the function or operate correctly)<br />
 
 # Examples
 For all the following examples these settings remain constant:<br />

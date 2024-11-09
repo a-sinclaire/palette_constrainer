@@ -1,6 +1,6 @@
 import cv2
 
-from skittle4 import skittlize
+from skittlize import skittlize
 
 
 def main():
