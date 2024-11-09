@@ -107,7 +107,7 @@ def skittlize(image_path: str, palette: list[str], palette_count: list[int],
 
     # SETTING THE NUMBER OF "BG color" SKITTLES TO EXACTLY (last index)
     # THE NUMBER OF EMPTY SPACES WE HAVE
-    if use_all is True:
+    if use_all is True and unlimited is False:
         total_skittles = 0
         for k in range(len(palette_count)):
             total_skittles += palette_count[k]
@@ -172,7 +172,7 @@ def skittlize(image_path: str, palette: list[str], palette_count: list[int],
                     col_available = True
             # if no colors are available then color white
             if col_available is not True:
-                image[x_in, y_in] = [255, 255, 255]
+                image[x_in, y_in] = [255, 255, 255]  # TODO: should use bg color, not white
                 break
 
             # if the count for that color is 0, we ran out of that color
@@ -193,5 +193,5 @@ def skittlize(image_path: str, palette: list[str], palette_count: list[int],
             out_array[x_in][y_in] = col_ind
             colored = True
 
-    palette_count[-1] = 0
+    palette_count[-1] = 0  # TODO: what was my thinking here?
     return image, out_array, palette_count
